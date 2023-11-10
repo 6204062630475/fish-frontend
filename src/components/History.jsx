@@ -73,7 +73,7 @@ function History() {
   useEffect(() => {
     console.log("OpenHistory");
     // เรียกใช้ API เพื่อดึงข้อมูล CSV
-    axios.get("http://103.114.203.159:3001/get-data").then((response) => {
+    axios.get("https://counting-fish-api.onrender.com/get-data").then((response) => {
       // ตัวอย่างข้อมูล CSV
       const Data = response.data;
       // แปลง CSV เป็นอาร์เรย์
