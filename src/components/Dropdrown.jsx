@@ -27,7 +27,7 @@ export default function BasicMenu() {
 
   const handleClickOpenDialog1 = () => {
     setOpenDialog1(true);
-    axios.get("http://103.114.203.159:3001/get-img").then((response) => {
+    axios.get("https://counting-fish-api.onrender.com/get-img").then((response) => {
       const base64Images = response.data;
       setImageList(base64Images);
     });
