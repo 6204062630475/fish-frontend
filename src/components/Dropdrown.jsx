@@ -112,8 +112,8 @@ export default function BasicMenu() {
         </DialogTitle>
         <DialogContent dividers>
           <DialogContentText id="alert-dialog-description">
-            <img src="./guide/guide1.jpg" alt="guild" width={"100%"} />
-            <img src="./guide/guide2.jpg" alt="guild" width={"100%"} />
+            <img src="./guide/guide1.png" alt="guild" width={"100%"} />
+            <img src="./guide/guide2.png" alt="guild" width={"100%"} />
           </DialogContentText>
         </DialogContent>
         <DialogActions>
