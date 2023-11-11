@@ -10,13 +10,13 @@ function App() {
   const [countNumber, setcountNumber] = useState(0);
   const [image, setImage] = useState();
   const getAvg = () => {
-    axios.get("https://counting-fish-api.onrender.com/getAvg").then((response) => {
+    axios.get("https://https://fish-api-0fmm.onrender.com/getAvg").then((response) => {
       setcountNumber(response.data.average);
       
     });
   }
   const getImg = () => {
-    axios.get("https://counting-fish-api.onrender.com/get-firstImg")
+    axios.get("https://https://fish-api-0fmm.onrender.com/get-firstImg")
       .then((response) => {
         const base64Image = response.data.base64String; 
         setImage(base64Image); 
