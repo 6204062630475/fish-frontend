@@ -73,7 +73,7 @@ function History() {
   useEffect(() => {
     console.log("OpenHistory");
     // เรียกใช้ API เพื่อดึงข้อมูล CSV
-    axios.get("https://fish-api-0fmm.onrender.com/get-data").then((response) => {
+    axios.get("http://localhost:3001/get-data").then((response) => {
       // ตัวอย่างข้อมูล CSV
       const Data = response.data;
       // แปลง CSV เป็นอาร์เรย์
@@ -126,7 +126,6 @@ function History() {
       <div className="navbar-container">
         <Navbar />
       </div>
-      
 
       <Button
         variant="contained"
@@ -176,28 +175,33 @@ function History() {
             className="CenterPaper2"
           >
             <h2>กราฟค่าเฉลี่ยรายวัน</h2>
-            <div className="input-container">
-              <Stack>
-                <Input
-                  type="date"
-                  id="startdate"
-                  value={startDate}
-                  onChange={handleStartDateChange}
-                />
-                <Input
-                  type="date"
-                  id="enddate"
-                  value={endDate}
-                  onChange={handleEndDateChange}
-                />
-              </Stack>
+            {/* <div className="input-container"> */}
+            <Stack
+              justifyContent={"center"}
+              direction={{ xs: "column", sm: "row" }}
+              spacing={{ xs: 1, sm: 2, md: 4 }}
+              marginBottom={2}
+            >
+              <Input
+                type="date"
+                id="startdate"
+                value={startDate}
+                onChange={handleStartDateChange}
+              />
+              <Input
+                type="date"
+                id="enddate"
+                value={endDate}
+                onChange={handleEndDateChange}
+              />
+
               <Button
                 variant="outlined"
                 onClick={handleFilter}
                 color="success"
                 sx={{ borderRadius: "20px" }}
               >
-                กำหนดวัน
+                กำหนด
               </Button>
               <Button
                 variant="outlined"
@@ -206,8 +210,8 @@ function History() {
               >
                 แสดงทั้งหมด
               </Button>
-            </div>
-
+              {/* </div> */}
+            </Stack>
             <HistoryChart data={chartData} sameday={sameday} />
           </Paper>
         </div>
@@ -218,28 +222,33 @@ function History() {
             className="CenterPaper"
           >
             <h2>ตารางประวัติการนับ</h2>
-            <div className="input-container">
-              <Stack>
-                <Input
-                  type="date"
-                  id="startdate"
-                  value={startDate}
-                  onChange={handleStartDateChange}
-                />
-                <Input
-                  type="date"
-                  id="enddate"
-                  value={endDate}
-                  onChange={handleEndDateChange}
-                />
-              </Stack>
+            {/* <div className="input-container"> */}
+            <Stack
+              justifyContent={"center"}
+              direction={{ xs: "column", sm: "row" }}
+              spacing={{ xs: 1, sm: 2, md: 4 }}
+              marginBottom={2}
+            >
+              <Input
+                type="date"
+                id="startdate"
+                value={startDate}
+                onChange={handleStartDateChange}
+              />
+              <Input
+                type="date"
+                id="enddate"
+                value={endDate}
+                onChange={handleEndDateChange}
+              />
+
               <Button
                 variant="outlined"
                 onClick={handleFilter}
                 color="success"
                 sx={{ borderRadius: "20px" }}
               >
-                กำหนดวัน
+                กำหนด
               </Button>
               <Button
                 variant="outlined"
@@ -251,11 +260,12 @@ function History() {
               <Button
                 variant="contained"
                 onClick={exportFile}
-                sx={{ borderRadius: "20px" }}
+                sx={{ borderRadius: "20px"}}
               >
-                ดาวน์โหลดข้อมูล
+                ดาวน์โหลด
               </Button>
-            </div>
+            </Stack>
+            {/* </div> */}
             <TableContainer sx={{ maxHeight: 420 }}>
               <Table
                 stickyHeader
