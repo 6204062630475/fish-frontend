@@ -45,13 +45,6 @@ export default function NavBar() {
                   borderRadius: "10px",
                 }}
                 onClick={() => handleNavigate("/")}
-                startIcon={
-                  <box-icon
-                    name="home"
-                    type="solid"
-                    color={isHomeActive ? "#00aa9f" : "gray"}
-                  ></box-icon>
-                }
               >
                 หน้าแรก
               </Button>
@@ -64,12 +57,6 @@ export default function NavBar() {
                   borderRadius: "10px",
                 }}
                 onClick={() => handleNavigate("/history")}
-                startIcon={
-                  <box-icon
-                    name="history"
-                    color={isHistoryActive ? "#00aa9f" : "gray"}
-                  ></box-icon>
-                }
               >
                 ประวัติการนับ
               </Button>
