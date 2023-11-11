@@ -208,7 +208,7 @@ function History() {
                 onClick={resetFilter}
                 sx={{ borderRadius: "20px" }}
               >
-                แสดงทั้งหมด
+                รีเซ็ต
               </Button>
               {/* </div> */}
             </Stack>
@@ -255,7 +255,7 @@ function History() {
                 onClick={resetFilter}
                 sx={{ borderRadius: "20px" }}
               >
-                แสดงทั้งหมด
+                รีเซ็ต
               </Button>
               <Button
                 variant="contained"
