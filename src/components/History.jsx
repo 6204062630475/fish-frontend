@@ -201,7 +201,7 @@ function History() {
                 color="success"
                 sx={{ borderRadius: "20px" }}
               >
-                กำหนด
+                กำหนดวัน
               </Button>
               <Button
                 variant="outlined"
@@ -248,7 +248,7 @@ function History() {
                 color="success"
                 sx={{ borderRadius: "20px" }}
               >
-                กำหนด
+                กำหนดวัน
               </Button>
               <Button
                 variant="outlined"
