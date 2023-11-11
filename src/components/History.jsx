@@ -57,7 +57,7 @@ function History() {
     });
     // console.log(filteredChartData);
     setCsvData(filteredChartData.reverse());
-    setchartData(filteredChartData.reverse());
+    setchartData(filteredChartData);
     setsameday(startDate == endDate); //เช็คว่าเป็นวันเดียวกัน
     // console.log(sameday);
   };
