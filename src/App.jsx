@@ -29,7 +29,7 @@ function App() {
     const interval = setInterval(() => {
       getAvg();
       getImg();
-    }, 5000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
   
