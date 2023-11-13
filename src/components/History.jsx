@@ -37,6 +37,7 @@ function History() {
   const [endDate, setEndDate] = useState("");
   const [sameday, setsameday] = useState(false);
   const [chooseDay, setchooseDay] = useState(false);  
+  const [reverted, setreverted] = useState(false);
   const [mode, setMode] = useState("chart");
 
   const handleStartDateChange = (event) => {
@@ -58,10 +59,13 @@ function History() {
       const rowDate = dayjs(row.DATETIME, "D/M/YYYY");
       return dayjs(rowDate).isBetween(startDateObj, endDateObj, "day", "[]");
     });
-    setCsvData(filteredChartData.reverse());
-    setchartData(filteredChartData);
+    if(!reverted){
+      setCsvData(filteredData.reverse());
+      setchartData(filteredData);
+    }
     setsameday(startDate == endDate); //เช็คว่าเป็นวันเดียวกัน
     setchooseDay(false)
+    setreverted(true)
     }
   };
 
@@ -71,6 +75,7 @@ function History() {
     setsameday(false);
     setStartDate("");
     setEndDate("");
+    setreverted(false)
   };
 
   useEffect(() => {
@@ -91,10 +96,11 @@ function History() {
         return row;
       });
       const clonedCsvArray = [...csvArray].reverse(); // Clone csvArray ก่อนที่จะ reverse เพราะหาก reverse แล้วข้างบนจะโดนผลกระทบไปด้วย
-      setCsvData(clonedCsvArray); // .reverse() คือเรียงข้อมูลจากล่างขึ้นบน
-      setBackupChart(csvArray);
-      setBackupTable(clonedCsvArray);
+      setCsvData(clonedCsvArray); 
       setchartData(csvArray);
+      setBackupTable(clonedCsvArray);
+      setBackupChart(csvArray);
+      
     });
   }, []);
   const handleChangePage = (event, newPage) => {
