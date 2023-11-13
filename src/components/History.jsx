@@ -46,6 +46,7 @@ function History() {
   const handleEndDateChange = (event) => {
     console.log("setEndDate: ", event.target.value);
     setEndDate(event.target.value);
+    setchooseDay(true)
   };
 
   const handleFilter = () => {
