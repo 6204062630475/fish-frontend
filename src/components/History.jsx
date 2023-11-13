@@ -55,7 +55,7 @@ function History() {
       const startDateObj = dayjs(startDate);
       const endDateObj = dayjs(endDate);
       console.log(startDate, endDate);
-      const filteredChartData = csvData.filter((row) => {
+      const filteredData = csvData.filter((row) => {
       const rowDate = dayjs(row.DATETIME, "D/M/YYYY");
       return dayjs(rowDate).isBetween(startDateObj, endDateObj, "day", "[]");
     });
