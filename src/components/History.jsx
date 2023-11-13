@@ -36,6 +36,7 @@ function History() {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [sameday, setsameday] = useState(false);
+  const [chooseDay, setchooseDay] = useState(false);  
   const [mode, setMode] = useState("chart");
 
   const handleStartDateChange = (event) => {
@@ -48,18 +49,18 @@ function History() {
   };
 
   const handleFilter = () => {
-    const startDateObj = dayjs(startDate);
-    const endDateObj = dayjs(endDate);
-    console.log(startDate, endDate);
-    const filteredChartData = csvData.filter((row) => {
+    if(chooseDay){
+      const startDateObj = dayjs(startDate);
+      const endDateObj = dayjs(endDate);
+      console.log(startDate, endDate);
+      const filteredChartData = csvData.filter((row) => {
       const rowDate = dayjs(row.DATETIME, "D/M/YYYY");
       return dayjs(rowDate).isBetween(startDateObj, endDateObj, "day", "[]");
     });
-    // console.log(filteredChartData);
     setCsvData(filteredChartData.reverse());
     setchartData(filteredChartData);
     setsameday(startDate == endDate); //เช็คว่าเป็นวันเดียวกัน
-    // console.log(sameday);
+    }
   };
 
   const resetFilter = () => {
