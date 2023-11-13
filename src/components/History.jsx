@@ -61,6 +61,7 @@ function History() {
     setCsvData(filteredChartData.reverse());
     setchartData(filteredChartData);
     setsameday(startDate == endDate); //เช็คว่าเป็นวันเดียวกัน
+    setchooseDay(false)
     }
   };
 
